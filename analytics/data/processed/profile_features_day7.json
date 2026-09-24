@@ -1,0 +1,245 @@
+{
+  "generated": "2026-09-22",
+  "note": "Synthetic readers reading real books. Pages, subject group and population share come from training.parquet; outcomes are Bernoulli draws from the generative model in profile_study. No real reader outcomes are involved.",
+  "generative_model": {
+    "base_logit_mean": 0.35,
+    "base_logit_sd": 0.8,
+    "band_pref_sd": 0.9,
+    "subject_pref_sd": 0.7,
+    "format_pref_sd": 0.4,
+    "population_weight": 0.8,
+    "seed": 2026
+  },
+  "subject_groups": {
+    "children": [
+      "subj_children_s_fiction",
+      "subj_juvenile_fiction",
+      "subj_juvenile_literature",
+      "subj_children_s_stories",
+      "subj_schools",
+      "subj_schools_fiction",
+      "subj_animals"
+    ],
+    "fantasy_sf": [
+      "subj_fantasy",
+      "subj_fantasy_fiction",
+      "subj_fiction_fantasy_general",
+      "subj_magic",
+      "subj_science_fiction",
+      "subj_fiction_science_fiction_general"
+    ],
+    "crime_mystery": [
+      "subj_fiction_mystery_detective_general",
+      "subj_detective_and_mystery_stories",
+      "subj_mystery_and_detective_stories",
+      "subj_mystery",
+      "subj_murder",
+      "subj_police",
+      "subj_fiction_thrillers_general",
+      "subj_fiction_thrillers_suspense",
+      "subj_fiction_suspense"
+    ],
+    "romance": [
+      "subj_romance",
+      "subj_romance_fiction",
+      "subj_fiction_romance_general",
+      "subj_fiction_romance_contemporary",
+      "subj_fiction_romance_historical",
+      "subj_fiction_romance_historical_general",
+      "subj_fiction_romance_historical_regency",
+      "subj_love_stories",
+      "subj_man_woman_relationships",
+      "subj_man_woman_relationships_fiction"
+    ],
+    "history": [
+      "subj_history",
+      "subj_historical_fiction",
+      "subj_fiction_historical_general",
+      "subj_social_life_and_customs",
+      "subj_manners_and_customs"
+    ],
+    "non_fiction": [
+      "subj_nonfiction",
+      "subj_biography"
+    ]
+  },
+  "subject_group_fallback": "fiction",
+  "base_features": [
+    "population_logit"
+  ],
+  "figure": "data/processed/figures/profile_feature_gains.png",
+  "data_label": "synthetic",
+  "n_readers": 200,
+  "n_books": 40,
+  "n_rows": 8000,
+  "n_splits": 5,
+  "finish_rate": 0.392875,
+  "base": {
+    "log_loss": 0.6446035434565388,
+    "brier": 0.2268120063799434
+  },
+  "marginal": [
+    {
+      "feature": "reader_band_rate",
+      "log_loss": 0.5744631310297086,
+      "brier": 0.19536110174269297,
+      "log_loss_gain": 0.07014041242683022,
+      "brier_gain": 0.03145090463725042
+    },
+    {
+      "feature": "reader_finish_rate",
+      "log_loss": 0.5891671762075765,
+      "brier": 0.201916369905744,
+      "log_loss_gain": 0.05543636724896228,
+      "brier_gain": 0.0248956364741994
+    },
+    {
+      "feature": "reader_abandon_rate",
+      "log_loss": 0.5891671762075765,
+      "brier": 0.201916369905744,
+      "log_loss_gain": 0.05543636724896228,
+      "brier_gain": 0.0248956364741994
+    },
+    {
+      "feature": "books_per_month",
+      "log_loss": 0.5922664744305453,
+      "brier": 0.2033176373451936,
+      "log_loss_gain": 0.052337069025993554,
+      "brier_gain": 0.0234943690347498
+    },
+    {
+      "feature": "reader_subject_rate",
+      "log_loss": 0.5951503522587259,
+      "brier": 0.20445491876966868,
+      "log_loss_gain": 0.049453191197812885,
+      "brier_gain": 0.022357087610274717
+    },
+    {
+      "feature": "reader_format_rate",
+      "log_loss": 0.5958362935784444,
+      "brier": 0.2047167950676386,
+      "log_loss_gain": 0.04876724987809444,
+      "brier_gain": 0.022095211312304797
+    },
+    {
+      "feature": "reader_band_lift",
+      "log_loss": 0.6284211537075467,
+      "brier": 0.21905369958164933,
+      "log_loss_gain": 0.01618238974899211,
+      "brier_gain": 0.007758306798294062
+    },
+    {
+      "feature": "reader_subject_lift",
+      "log_loss": 0.6392358585602989,
+      "brier": 0.22428004827440937,
+      "log_loss_gain": 0.005367684896239955,
+      "brier_gain": 0.0025319581055340268
+    },
+    {
+      "feature": "reader_format_lift",
+      "log_loss": 0.6426968714255373,
+      "brier": 0.22589820816269662,
+      "log_loss_gain": 0.0019066720310014773,
+      "brier_gain": 0.0009137982172467696
+    },
+    {
+      "feature": "length_gap",
+      "log_loss": 0.6445958503213715,
+      "brier": 0.22682219360334785,
+      "log_loss_gain": 7.693135167352594e-06,
+      "brier_gain": -1.0187223404456436e-05
+    }
+  ],
+  "forward": [
+    {
+      "step": 1,
+      "feature": "reader_band_rate",
+      "log_loss": 0.5744631310297086,
+      "brier": 0.19536110174269297,
+      "log_loss_gain": 0.07014041242683022,
+      "brier_gain": 0.03145090463725042,
+      "log_loss_step_gain": 0.07014041242683022
+    },
+    {
+      "step": 2,
+      "feature": "reader_subject_rate",
+      "log_loss": 0.566557560007337,
+      "brier": 0.19211735698920115,
+      "log_loss_gain": 0.07804598344920177,
+      "brier_gain": 0.03469464939074224,
+      "log_loss_step_gain": 0.00790557102237155
+    },
+    {
+      "step": 3,
+      "feature": "reader_format_lift",
+      "log_loss": 0.5645570015638084,
+      "brier": 0.19115418190365585,
+      "log_loss_gain": 0.08004654189273042,
+      "brier_gain": 0.03565782447628754,
+      "log_loss_step_gain": 0.002000558443528644
+    },
+    {
+      "step": 4,
+      "feature": "length_gap",
+      "log_loss": 0.564433662443641,
+      "brier": 0.19113455601617665,
+      "log_loss_gain": 0.08016988101289779,
+      "brier_gain": 0.03567745036376674,
+      "log_loss_step_gain": 0.00012333912016737614
+    },
+    {
+      "step": 5,
+      "feature": "books_per_month",
+      "log_loss": 0.564375726840147,
+      "brier": 0.19113885840225425,
+      "log_loss_gain": 0.08022781661639178,
+      "brier_gain": 0.03567314797768914,
+      "log_loss_step_gain": 5.7935603493985965e-05
+    },
+    {
+      "step": 6,
+      "feature": "reader_format_rate",
+      "log_loss": 0.5644333335993438,
+      "brier": 0.1911569967758174,
+      "log_loss_gain": 0.08017020985719503,
+      "brier_gain": 0.03565500960412599,
+      "log_loss_step_gain": -5.760675919674885e-05
+    },
+    {
+      "step": 7,
+      "feature": "reader_subject_lift",
+      "log_loss": 0.5644326134233434,
+      "brier": 0.19115674086573423,
+      "log_loss_gain": 0.08017093003319542,
+      "brier_gain": 0.03565526551420917,
+      "log_loss_step_gain": 7.201760003905378e-07
+    },
+    {
+      "step": 8,
+      "feature": "reader_band_lift",
+      "log_loss": 0.5644345178912601,
+      "brier": 0.19115727366015045,
+      "log_loss_gain": 0.08016902556527872,
+      "brier_gain": 0.03565473271979294,
+      "log_loss_step_gain": -1.9044679167024015e-06
+    },
+    {
+      "step": 9,
+      "feature": "reader_finish_rate",
+      "log_loss": 0.5644397735525358,
+      "brier": 0.1911590324154875,
+      "log_loss_gain": 0.08016376990400298,
+      "brier_gain": 0.03565297396445588,
+      "log_loss_step_gain": -5.255661275738177e-06
+    },
+    {
+      "step": 10,
+      "feature": "reader_abandon_rate",
+      "log_loss": 0.5644389157469982,
+      "brier": 0.19115944144851824,
+      "log_loss_gain": 0.08016462770954058,
+      "brier_gain": 0.03565256493142516,
+      "log_loss_step_gain": 8.578055376018412e-07
+    }
+  ]
+}

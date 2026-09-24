@@ -1,0 +1,1833 @@
+{
+  "built": "2026-09-24",
+  "built_by": "analytics/build_llm_eval.py",
+  "sources": {
+    "rounds": "summary-eval-metrics.csv (prompt_version as written); each round's run file hash kept beside it as prompt_version_run where it differs, see prompt_version_note",
+    "judges": "summary-judge-r{4,5,6}-{opus,sonnet}.json with summary-judge-key-r{4,5,6}.json",
+    "check": "summary-eval.md, round tables (Round 4, 5 and 6 sections)"
+  },
+  "definitions": {
+    "content_ok": "faithful, no_outcome, premise_kept and null_correct all true",
+    "controls_caught": "planted control failed on its own criterion: {\"control_invented\": \"faithful\", \"control_outcome\": \"no_outcome\", \"control_premise\": \"premise_kept\", \"control_rules\": \"rules_ok\"}",
+    "hook_score": "mean over real replies of yes 1, partly 0.5, no 0",
+    "agreement": "share of all batch items (real, repeats, controls) where the two judges agree"
+  },
+  "rounds": [
+    {
+      "round": "r1",
+      "variant": "A",
+      "prompt_version": "64c7c902e4f2 (first 8)",
+      "judge_pass": 10,
+      "n": 12,
+      "n_replies": 12,
+      "null_replies": 1,
+      "mean_words": 37.4,
+      "max_words": 48,
+      "over_60_words": 0,
+      "two_or_three_sentences_rate": 0.727,
+      "rouge_l_precision_vs_description": 0.636,
+      "compression_ratio": 0.379,
+      "title_leaks": 0,
+      "praise_word_hits": 0,
+      "median_seconds": 1.66,
+      "mean_cost_usd": 0.000984,
+      "source": "summary-eval-metrics.csv, line 2",
+      "prompt_version_run_file": "summary-eval-raw.json"
+    },
+    {
+      "round": "r1",
+      "variant": "B",
+      "prompt_version": "64c7c902e4f2 (all 22)",
+      "judge_pass": 10,
+      "n": 12,
+      "n_replies": 12,
+      "null_replies": 0,
+      "mean_words": 36.2,
+      "max_words": 49,
+      "over_60_words": 0,
+      "two_or_three_sentences_rate": 0.833,
+      "rouge_l_precision_vs_description": 0.662,
+      "compression_ratio": 0.353,
+      "title_leaks": 0,
+      "praise_word_hits": 1,
+      "median_seconds": 1.38,
+      "mean_cost_usd": 0.001764,
+      "source": "summary-eval-metrics.csv, line 3",
+      "prompt_version_run_file": "summary-eval-raw.json"
+    },
+    {
+      "round": "r2",
+      "variant": "A",
+      "prompt_version": "5f56e4ab84a5",
+      "judge_pass": 12,
+      "n": 12,
+      "n_replies": 12,
+      "null_replies": 0,
+      "mean_words": 38.8,
+      "max_words": 54,
+      "over_60_words": 0,
+      "two_or_three_sentences_rate": 0.75,
+      "rouge_l_precision_vs_description": 0.619,
+      "compression_ratio": 0.375,
+      "title_leaks": 0,
+      "praise_word_hits": 1,
+      "median_seconds": 1.29,
+      "mean_cost_usd": 0.001008,
+      "source": "summary-eval-metrics.csv, line 4",
+      "prompt_version_run_file": "summary-eval-raw-r2.json",
+      "prompt_version_run": "50c6dfd7b6cd",
+      "prompt_version_note": "Two hashes of the same prompt. 5f56e4ab84a5 (summary-eval-metrics.csv) hashes what the round sent; summary-prompt.md names it at line 3. 50c6dfd7b6cd (summary-eval-raw-r2.json) is the runner's hash of the whole prompt module, the instruction with all 22 examples; summary-eval.md explains it at lines 63, 65, 136."
+    },
+    {
+      "round": "r3",
+      "variant": "A",
+      "prompt_version": "72c8d8c81156",
+      "judge_pass": 10,
+      "n": 12,
+      "n_replies": 12,
+      "null_replies": 0,
+      "mean_words": 46.8,
+      "max_words": 61,
+      "over_60_words": 1,
+      "two_or_three_sentences_rate": 0.833,
+      "rouge_l_precision_vs_description": 0.703,
+      "compression_ratio": 0.426,
+      "title_leaks": 0,
+      "praise_word_hits": 2,
+      "median_seconds": 1.45,
+      "mean_cost_usd": 0.001077,
+      "source": "summary-eval-metrics.csv, line 5",
+      "prompt_version_run_file": "summary-eval-raw-r3.json"
+    },
+    {
+      "round": "r4",
+      "variant": "A",
+      "prompt_version": "f44646cab325",
+      "judge_pass": 10,
+      "n": 12,
+      "n_replies": 12,
+      "null_replies": 0,
+      "mean_words": 43.0,
+      "max_words": 59,
+      "over_60_words": 0,
+      "two_or_three_sentences_rate": 0.833,
+      "rouge_l_precision_vs_description": 0.714,
+      "compression_ratio": 0.394,
+      "title_leaks": 0,
+      "praise_word_hits": 1,
+      "median_seconds": 1.32,
+      "mean_cost_usd": 0.001086,
+      "source": "summary-eval-metrics.csv, line 6",
+      "prompt_version_run_file": "summary-eval-raw-r4.json"
+    },
+    {
+      "round": "r5",
+      "variant": "A",
+      "prompt_version": "788f967a6810",
+      "judge_pass": 11,
+      "n": 12,
+      "n_replies": 12,
+      "null_replies": 0,
+      "mean_words": 45.7,
+      "max_words": 68,
+      "over_60_words": 2,
+      "two_or_three_sentences_rate": 0.833,
+      "rouge_l_precision_vs_description": 0.7,
+      "compression_ratio": 0.414,
+      "title_leaks": 0,
+      "praise_word_hits": 2,
+      "median_seconds": 1.39,
+      "mean_cost_usd": 0.001099,
+      "source": "summary-eval-metrics.csv, line 7",
+      "prompt_version_run_file": "summary-eval-raw-r5.json"
+    },
+    {
+      "round": "r6",
+      "variant": "A",
+      "prompt_version": "3dd70bf5e831",
+      "judge_pass": 10,
+      "n": 12,
+      "n_replies": 12,
+      "null_replies": 0,
+      "mean_words": 42.8,
+      "max_words": 53,
+      "over_60_words": 0,
+      "two_or_three_sentences_rate": 0.833,
+      "rouge_l_precision_vs_description": 0.679,
+      "compression_ratio": 0.399,
+      "title_leaks": 0,
+      "praise_word_hits": 2,
+      "median_seconds": 1.27,
+      "mean_cost_usd": 0.001179,
+      "source": "summary-eval-metrics.csv, line 8",
+      "prompt_version_run_file": "summary-eval-raw-r6.json"
+    }
+  ],
+  "judges": [
+    {
+      "round": "r4",
+      "per_judge": {
+        "opus": {
+          "real_pass": {
+            "value": 10,
+            "route": "computed",
+            "source": "summary-judge-r4-opus.json with summary-judge-key-r4.json",
+            "md_text": "10",
+            "md_line": 147,
+            "md_matches": true
+          },
+          "real_n": {
+            "value": 12,
+            "route": "computed",
+            "source": "summary-judge-r4-opus.json with summary-judge-key-r4.json",
+            "md_text": "12",
+            "md_line": 147,
+            "md_matches": true
+          },
+          "real_content_pass": {
+            "value": 11,
+            "route": "computed",
+            "source": "summary-judge-r4-opus.json with summary-judge-key-r4.json",
+            "md_text": null,
+            "md_line": null,
+            "md_matches": null
+          },
+          "controls_caught": {
+            "value": 3,
+            "route": "computed",
+            "source": "summary-judge-r4-opus.json with summary-judge-key-r4.json",
+            "md_text": "3",
+            "md_line": 152,
+            "md_matches": true
+          },
+          "controls_n": {
+            "value": 4,
+            "route": "computed",
+            "source": "summary-judge-r4-opus.json with summary-judge-key-r4.json",
+            "md_text": "4",
+            "md_line": 152,
+            "md_matches": true
+          },
+          "hook_score": {
+            "value": 0.8333333333333334,
+            "route": "computed",
+            "source": "summary-judge-r4-opus.json with summary-judge-key-r4.json",
+            "md_text": "0.83",
+            "md_line": 151,
+            "md_matches": true
+          },
+          "repeats_content_pass": {
+            "value": 0,
+            "route": "computed",
+            "source": "summary-judge-r4-opus.json with summary-judge-key-r4.json",
+            "md_text": null,
+            "md_line": null,
+            "md_matches": null
+          },
+          "repeats_n": {
+            "value": 0,
+            "route": "computed",
+            "source": "summary-judge-r4-opus.json with summary-judge-key-r4.json",
+            "md_text": null,
+            "md_line": null,
+            "md_matches": null
+          }
+        },
+        "sonnet": {
+          "real_pass": {
+            "value": 12,
+            "route": "computed",
+            "source": "summary-judge-r4-sonnet.json with summary-judge-key-r4.json",
+            "md_text": "12",
+            "md_line": 147,
+            "md_matches": true
+          },
+          "real_n": {
+            "value": 12,
+            "route": "computed",
+            "source": "summary-judge-r4-sonnet.json with summary-judge-key-r4.json",
+            "md_text": "12",
+            "md_line": 147,
+            "md_matches": true
+          },
+          "real_content_pass": {
+            "value": 12,
+            "route": "computed",
+            "source": "summary-judge-r4-sonnet.json with summary-judge-key-r4.json",
+            "md_text": null,
+            "md_line": null,
+            "md_matches": null
+          },
+          "controls_caught": {
+            "value": 3,
+            "route": "computed",
+            "source": "summary-judge-r4-sonnet.json with summary-judge-key-r4.json",
+            "md_text": "3",
+            "md_line": 152,
+            "md_matches": true
+          },
+          "controls_n": {
+            "value": 4,
+            "route": "computed",
+            "source": "summary-judge-r4-sonnet.json with summary-judge-key-r4.json",
+            "md_text": "4",
+            "md_line": 152,
+            "md_matches": true
+          },
+          "hook_score": {
+            "value": 1.0,
+            "route": "computed",
+            "source": "summary-judge-r4-sonnet.json with summary-judge-key-r4.json",
+            "md_text": "1.00",
+            "md_line": 151,
+            "md_matches": true
+          },
+          "repeats_content_pass": {
+            "value": 0,
+            "route": "computed",
+            "source": "summary-judge-r4-sonnet.json with summary-judge-key-r4.json",
+            "md_text": null,
+            "md_line": null,
+            "md_matches": null
+          },
+          "repeats_n": {
+            "value": 0,
+            "route": "computed",
+            "source": "summary-judge-r4-sonnet.json with summary-judge-key-r4.json",
+            "md_text": null,
+            "md_line": null,
+            "md_matches": null
+          }
+        }
+      },
+      "agreement": {
+        "pass_fail_agreement": {
+          "value": 0.875,
+          "route": "computed",
+          "source": "summary-judge-r4-opus.json and -sonnet.json with summary-judge-key-r4.json",
+          "md_text": "0.875",
+          "md_line": 153,
+          "md_matches": true
+        },
+        "cohens_kappa": {
+          "value": 0.673469387755102,
+          "route": "computed",
+          "source": "summary-judge-r4-opus.json and -sonnet.json with summary-judge-key-r4.json",
+          "md_text": "0.673",
+          "md_line": 154,
+          "md_matches": true
+        },
+        "content_agreement": {
+          "value": 0.875,
+          "route": "computed",
+          "source": "summary-judge-r4-opus.json and -sonnet.json with summary-judge-key-r4.json",
+          "md_text": null,
+          "md_line": null,
+          "md_matches": null
+        },
+        "content_kappa": {
+          "value": 0.6,
+          "route": "computed",
+          "source": "summary-judge-r4-opus.json and -sonnet.json with summary-judge-key-r4.json",
+          "md_text": null,
+          "md_line": null,
+          "md_matches": null
+        },
+        "n_items": {
+          "value": 16,
+          "route": "computed",
+          "source": "summary-judge-r4-opus.json and -sonnet.json with summary-judge-key-r4.json",
+          "md_text": "16",
+          "md_line": 153,
+          "md_matches": true
+        }
+      }
+    },
+    {
+      "round": "r5",
+      "per_judge": {
+        "opus": {
+          "real_pass": {
+            "value": 11,
+            "route": "computed",
+            "source": "summary-judge-r5-opus.json with summary-judge-key-r5.json",
+            "md_text": null,
+            "md_line": null,
+            "md_matches": null
+          },
+          "real_n": {
+            "value": 12,
+            "route": "computed",
+            "source": "summary-judge-r5-opus.json with summary-judge-key-r5.json",
+            "md_text": "12",
+            "md_line": 175,
+            "md_matches": true
+          },
+          "real_content_pass": {
+            "value": 11,
+            "route": "computed",
+            "source": "summary-judge-r5-opus.json with summary-judge-key-r5.json",
+            "md_text": "11",
+            "md_line": 175,
+            "md_matches": true
+          },
+          "controls_caught": {
+            "value": 4,
+            "route": "computed",
+            "source": "summary-judge-r5-opus.json with summary-judge-key-r5.json",
+            "md_text": "4",
+            "md_line": 179,
+            "md_matches": true
+          },
+          "controls_n": {
+            "value": 4,
+            "route": "computed",
+            "source": "summary-judge-r5-opus.json with summary-judge-key-r5.json",
+            "md_text": "4",
+            "md_line": 179,
+            "md_matches": true
+          },
+          "hook_score": {
+            "value": 0.875,
+            "route": "computed",
+            "source": "summary-judge-r5-opus.json with summary-judge-key-r5.json",
+            "md_text": "0.875",
+            "md_line": 180,
+            "md_matches": true
+          },
+          "repeats_content_pass": {
+            "value": 1,
+            "route": "computed",
+            "source": "summary-judge-r5-opus.json with summary-judge-key-r5.json",
+            "md_text": "1",
+            "md_line": 177,
+            "md_matches": true
+          },
+          "repeats_n": {
+            "value": 3,
+            "route": "computed",
+            "source": "summary-judge-r5-opus.json with summary-judge-key-r5.json",
+            "md_text": "3",
+            "md_line": 177,
+            "md_matches": true
+          }
+        },
+        "sonnet": {
+          "real_pass": {
+            "value": 8,
+            "route": "computed",
+            "source": "summary-judge-r5-sonnet.json with summary-judge-key-r5.json",
+            "md_text": null,
+            "md_line": null,
+            "md_matches": null
+          },
+          "real_n": {
+            "value": 12,
+            "route": "computed",
+            "source": "summary-judge-r5-sonnet.json with summary-judge-key-r5.json",
+            "md_text": "12",
+            "md_line": 175,
+            "md_matches": true
+          },
+          "real_content_pass": {
+            "value": 11,
+            "route": "computed",
+            "source": "summary-judge-r5-sonnet.json with summary-judge-key-r5.json",
+            "md_text": "11",
+            "md_line": 175,
+            "md_matches": true
+          },
+          "controls_caught": {
+            "value": 4,
+            "route": "computed",
+            "source": "summary-judge-r5-sonnet.json with summary-judge-key-r5.json",
+            "md_text": "4",
+            "md_line": 179,
+            "md_matches": true
+          },
+          "controls_n": {
+            "value": 4,
+            "route": "computed",
+            "source": "summary-judge-r5-sonnet.json with summary-judge-key-r5.json",
+            "md_text": "4",
+            "md_line": 179,
+            "md_matches": true
+          },
+          "hook_score": {
+            "value": 1.0,
+            "route": "computed",
+            "source": "summary-judge-r5-sonnet.json with summary-judge-key-r5.json",
+            "md_text": "1.00",
+            "md_line": 180,
+            "md_matches": true
+          },
+          "repeats_content_pass": {
+            "value": 1,
+            "route": "computed",
+            "source": "summary-judge-r5-sonnet.json with summary-judge-key-r5.json",
+            "md_text": "1",
+            "md_line": 177,
+            "md_matches": true
+          },
+          "repeats_n": {
+            "value": 3,
+            "route": "computed",
+            "source": "summary-judge-r5-sonnet.json with summary-judge-key-r5.json",
+            "md_text": "3",
+            "md_line": 177,
+            "md_matches": true
+          }
+        }
+      },
+      "agreement": {
+        "pass_fail_agreement": {
+          "value": 0.8421052631578947,
+          "route": "computed",
+          "source": "summary-judge-r5-opus.json and -sonnet.json with summary-judge-key-r5.json",
+          "md_text": null,
+          "md_line": null,
+          "md_matches": null
+        },
+        "cohens_kappa": {
+          "value": 0.6885245901639343,
+          "route": "computed",
+          "source": "summary-judge-r5-opus.json and -sonnet.json with summary-judge-key-r5.json",
+          "md_text": null,
+          "md_line": null,
+          "md_matches": null
+        },
+        "content_agreement": {
+          "value": 0.9473684210526315,
+          "route": "computed",
+          "source": "summary-judge-r5-opus.json and -sonnet.json with summary-judge-key-r5.json",
+          "md_text": "0.947",
+          "md_line": 181,
+          "md_matches": true
+        },
+        "content_kappa": {
+          "value": 0.8834355828220858,
+          "route": "computed",
+          "source": "summary-judge-r5-opus.json and -sonnet.json with summary-judge-key-r5.json",
+          "md_text": "0.883",
+          "md_line": 181,
+          "md_matches": true
+        },
+        "n_items": {
+          "value": 19,
+          "route": "computed",
+          "source": "summary-judge-r5-opus.json and -sonnet.json with summary-judge-key-r5.json",
+          "md_text": "19",
+          "md_line": 181,
+          "md_matches": true
+        }
+      }
+    },
+    {
+      "round": "r6",
+      "per_judge": {
+        "opus": {
+          "real_pass": {
+            "value": 10,
+            "route": "computed",
+            "source": "summary-judge-r6-opus.json with summary-judge-key-r6.json",
+            "md_text": null,
+            "md_line": null,
+            "md_matches": null
+          },
+          "real_n": {
+            "value": 12,
+            "route": "computed",
+            "source": "summary-judge-r6-opus.json with summary-judge-key-r6.json",
+            "md_text": "12",
+            "md_line": 194,
+            "md_matches": true
+          },
+          "real_content_pass": {
+            "value": 11,
+            "route": "computed",
+            "source": "summary-judge-r6-opus.json with summary-judge-key-r6.json",
+            "md_text": "11",
+            "md_line": 194,
+            "md_matches": true
+          },
+          "controls_caught": {
+            "value": 4,
+            "route": "computed",
+            "source": "summary-judge-r6-opus.json with summary-judge-key-r6.json",
+            "md_text": "4",
+            "md_line": 199,
+            "md_matches": true
+          },
+          "controls_n": {
+            "value": 4,
+            "route": "computed",
+            "source": "summary-judge-r6-opus.json with summary-judge-key-r6.json",
+            "md_text": "4",
+            "md_line": 199,
+            "md_matches": true
+          },
+          "hook_score": {
+            "value": 0.9583333333333334,
+            "route": "computed",
+            "source": "summary-judge-r6-opus.json with summary-judge-key-r6.json",
+            "md_text": "0.958",
+            "md_line": 200,
+            "md_matches": true
+          },
+          "repeats_content_pass": {
+            "value": 5,
+            "route": "computed",
+            "source": "summary-judge-r6-opus.json with summary-judge-key-r6.json",
+            "md_text": "5",
+            "md_line": 197,
+            "md_matches": true
+          },
+          "repeats_n": {
+            "value": 5,
+            "route": "computed",
+            "source": "summary-judge-r6-opus.json with summary-judge-key-r6.json",
+            "md_text": "5",
+            "md_line": 197,
+            "md_matches": true
+          }
+        },
+        "sonnet": {
+          "real_pass": {
+            "value": 10,
+            "route": "computed",
+            "source": "summary-judge-r6-sonnet.json with summary-judge-key-r6.json",
+            "md_text": null,
+            "md_line": null,
+            "md_matches": null
+          },
+          "real_n": {
+            "value": 12,
+            "route": "computed",
+            "source": "summary-judge-r6-sonnet.json with summary-judge-key-r6.json",
+            "md_text": "12",
+            "md_line": 194,
+            "md_matches": true
+          },
+          "real_content_pass": {
+            "value": 11,
+            "route": "computed",
+            "source": "summary-judge-r6-sonnet.json with summary-judge-key-r6.json",
+            "md_text": "11",
+            "md_line": 194,
+            "md_matches": true
+          },
+          "controls_caught": {
+            "value": 4,
+            "route": "computed",
+            "source": "summary-judge-r6-sonnet.json with summary-judge-key-r6.json",
+            "md_text": "4",
+            "md_line": 199,
+            "md_matches": true
+          },
+          "controls_n": {
+            "value": 4,
+            "route": "computed",
+            "source": "summary-judge-r6-sonnet.json with summary-judge-key-r6.json",
+            "md_text": "4",
+            "md_line": 199,
+            "md_matches": true
+          },
+          "hook_score": {
+            "value": 0.9583333333333334,
+            "route": "computed",
+            "source": "summary-judge-r6-sonnet.json with summary-judge-key-r6.json",
+            "md_text": "0.958",
+            "md_line": 200,
+            "md_matches": true
+          },
+          "repeats_content_pass": {
+            "value": 5,
+            "route": "computed",
+            "source": "summary-judge-r6-sonnet.json with summary-judge-key-r6.json",
+            "md_text": "5",
+            "md_line": 197,
+            "md_matches": true
+          },
+          "repeats_n": {
+            "value": 5,
+            "route": "computed",
+            "source": "summary-judge-r6-sonnet.json with summary-judge-key-r6.json",
+            "md_text": "5",
+            "md_line": 197,
+            "md_matches": true
+          }
+        }
+      },
+      "agreement": {
+        "pass_fail_agreement": {
+          "value": 1.0,
+          "route": "computed",
+          "source": "summary-judge-r6-opus.json and -sonnet.json with summary-judge-key-r6.json",
+          "md_text": "1.000",
+          "md_line": 201,
+          "md_matches": true
+        },
+        "cohens_kappa": {
+          "value": 1.0,
+          "route": "computed",
+          "source": "summary-judge-r6-opus.json and -sonnet.json with summary-judge-key-r6.json",
+          "md_text": "1.000",
+          "md_line": 201,
+          "md_matches": true
+        },
+        "content_agreement": {
+          "value": 0.9523809523809523,
+          "route": "computed",
+          "source": "summary-judge-r6-opus.json and -sonnet.json with summary-judge-key-r6.json",
+          "md_text": "0.952",
+          "md_line": 202,
+          "md_matches": true
+        },
+        "content_kappa": {
+          "value": 0.8590604026845636,
+          "route": "computed",
+          "source": "summary-judge-r6-opus.json and -sonnet.json with summary-judge-key-r6.json",
+          "md_text": "0.859",
+          "md_line": 202,
+          "md_matches": true
+        },
+        "n_items": {
+          "value": 21,
+          "route": "computed",
+          "source": "summary-judge-r6-opus.json and -sonnet.json with summary-judge-key-r6.json",
+          "md_text": "21",
+          "md_line": 201,
+          "md_matches": true
+        }
+      }
+    }
+  ],
+  "verdicts": [
+    {
+      "round": "r4",
+      "source": "summary-judge-r4-opus.json and -sonnet.json with summary-judge-key-r4.json; titles from summary-eval-raw-r4.json",
+      "items": [
+        {
+          "id": "J01",
+          "kind": "real",
+          "work_key": "OL20018619W",
+          "title": "Neurologic",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J02",
+          "kind": "control_premise",
+          "work_key": "OL19739293W",
+          "title": "Our Kind of Cruelty",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "no"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "no"
+            }
+          }
+        },
+        {
+          "id": "J03",
+          "kind": "real",
+          "work_key": "OL892097W",
+          "title": "A rage to kill, and other true cases",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J04",
+          "kind": "real",
+          "work_key": "OL5844748W",
+          "title": "Cold Granite",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J05",
+          "kind": "control_outcome",
+          "work_key": "OL14979087W",
+          "title": "In Bed with the Duke:(Governess Brides #9)",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "no_outcome"
+              ],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "no_outcome"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J06",
+          "kind": "real",
+          "work_key": "OL2971723W",
+          "title": "Strategic planning for information systems",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J07",
+          "kind": "real",
+          "work_key": "OL2005882W",
+          "title": "The two minute rule",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J08",
+          "kind": "real",
+          "work_key": "OL19739293W",
+          "title": "Our Kind of Cruelty",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "partly"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J09",
+          "kind": "control_invented",
+          "work_key": "OL5695642W",
+          "title": "Her Secret Bridegroom",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "faithful"
+              ],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "faithful"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J10",
+          "kind": "real",
+          "work_key": "OL14979087W",
+          "title": "In Bed with the Duke:(Governess Brides #9)",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "faithful"
+              ],
+              "hook": "no"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J11",
+          "kind": "real",
+          "work_key": "OL15280980W",
+          "title": "I Am Number Four",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J12",
+          "kind": "real",
+          "work_key": "OL5695642W",
+          "title": "Her Secret Bridegroom",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J13",
+          "kind": "control_rules",
+          "work_key": "OL5844748W",
+          "title": "Cold Granite",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "faithful",
+                "rules_ok"
+              ],
+              "hook": "partly"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J14",
+          "kind": "real",
+          "work_key": "OL16626501W",
+          "title": "Liars and outliers",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "partly"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J15",
+          "kind": "real",
+          "work_key": "OL12073470W",
+          "title": "DMZ",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J16",
+          "kind": "real",
+          "work_key": "OL823141W",
+          "title": "Whole earth discipline",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": "r5",
+      "source": "summary-judge-r5-opus.json and -sonnet.json with summary-judge-key-r5.json; titles from summary-eval-raw-r5.json",
+      "items": [
+        {
+          "id": "J01",
+          "kind": "real",
+          "work_key": "OL2971723W",
+          "title": "Strategic planning for information systems",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J02",
+          "kind": "real",
+          "work_key": "OL12073470W",
+          "title": "DMZ",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J03",
+          "kind": "repeat",
+          "work_key": "OL14979087W",
+          "title": "In Bed with the Duke:(Governess Brides #9)",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "no_outcome"
+              ],
+              "hook": "partly"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "no_outcome"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J04",
+          "kind": "repeat",
+          "work_key": "OL14979087W",
+          "title": "In Bed with the Duke:(Governess Brides #9)",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J05",
+          "kind": "real",
+          "work_key": "OL892097W",
+          "title": "A rage to kill, and other true cases",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J06",
+          "kind": "real",
+          "work_key": "OL16626501W",
+          "title": "Liars and outliers",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J07",
+          "kind": "repeat",
+          "work_key": "OL14979087W",
+          "title": "In Bed with the Duke:(Governess Brides #9)",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "no_outcome"
+              ],
+              "hook": "partly"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "no_outcome"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J08",
+          "kind": "real",
+          "work_key": "OL20018619W",
+          "title": "Neurologic",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J09",
+          "kind": "real",
+          "work_key": "OL5695642W",
+          "title": "Her Secret Bridegroom",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "faithful"
+              ],
+              "hook": "partly"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "faithful"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J10",
+          "kind": "real",
+          "work_key": "OL5844748W",
+          "title": "Cold Granite",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J11",
+          "kind": "real",
+          "work_key": "OL19739293W",
+          "title": "Our Kind of Cruelty",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "partly"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J12",
+          "kind": "control_premise",
+          "work_key": "OL19739293W",
+          "title": "Our Kind of Cruelty",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "premise_kept"
+              ],
+              "hook": "no"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "premise_kept"
+              ],
+              "hook": "no"
+            }
+          }
+        },
+        {
+          "id": "J13",
+          "kind": "real",
+          "work_key": "OL14979087W",
+          "title": "In Bed with the Duke:(Governess Brides #9)",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "partly"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J14",
+          "kind": "control_outcome",
+          "work_key": "OL14979087W",
+          "title": "In Bed with the Duke:(Governess Brides #9)",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "no_outcome"
+              ],
+              "hook": "partly"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "no_outcome"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J15",
+          "kind": "control_rules",
+          "work_key": "OL5844748W",
+          "title": "Cold Granite",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "faithful",
+                "rules_ok"
+              ],
+              "hook": "partly"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J16",
+          "kind": "real",
+          "work_key": "OL15280980W",
+          "title": "I Am Number Four",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J17",
+          "kind": "control_invented",
+          "work_key": "OL5695642W",
+          "title": "Her Secret Bridegroom",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "faithful"
+              ],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "faithful"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J18",
+          "kind": "real",
+          "work_key": "OL2005882W",
+          "title": "The two minute rule",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J19",
+          "kind": "real",
+          "work_key": "OL823141W",
+          "title": "Whole earth discipline",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": "r6",
+      "source": "summary-judge-r6-opus.json and -sonnet.json with summary-judge-key-r6.json; titles from summary-eval-raw-r6.json",
+      "items": [
+        {
+          "id": "J01",
+          "kind": "real",
+          "work_key": "OL892097W",
+          "title": "A rage to kill, and other true cases",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J02",
+          "kind": "repeat",
+          "work_key": "OL14979087W",
+          "title": "In Bed with the Duke:(Governess Brides #9)",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J03",
+          "kind": "repeat",
+          "work_key": "OL14979087W",
+          "title": "In Bed with the Duke:(Governess Brides #9)",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J04",
+          "kind": "control_premise",
+          "work_key": "OL19739293W",
+          "title": "Our Kind of Cruelty",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "premise_kept"
+              ],
+              "hook": "no"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "premise_kept"
+              ],
+              "hook": "partly"
+            }
+          }
+        },
+        {
+          "id": "J05",
+          "kind": "real",
+          "work_key": "OL2971723W",
+          "title": "Strategic planning for information systems",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J06",
+          "kind": "control_outcome",
+          "work_key": "OL14979087W",
+          "title": "In Bed with the Duke:(Governess Brides #9)",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "no_outcome"
+              ],
+              "hook": "partly"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "no_outcome"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J07",
+          "kind": "repeat",
+          "work_key": "OL14979087W",
+          "title": "In Bed with the Duke:(Governess Brides #9)",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "partly"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J08",
+          "kind": "real",
+          "work_key": "OL16626501W",
+          "title": "Liars and outliers",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J09",
+          "kind": "repeat",
+          "work_key": "OL14979087W",
+          "title": "In Bed with the Duke:(Governess Brides #9)",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "partly"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J10",
+          "kind": "repeat",
+          "work_key": "OL14979087W",
+          "title": "In Bed with the Duke:(Governess Brides #9)",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J11",
+          "kind": "control_rules",
+          "work_key": "OL5844748W",
+          "title": "Cold Granite",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "faithful",
+                "rules_ok"
+              ],
+              "hook": "partly"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "partly"
+            }
+          }
+        },
+        {
+          "id": "J12",
+          "kind": "real",
+          "work_key": "OL14979087W",
+          "title": "In Bed with the Duke:(Governess Brides #9)",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "faithful"
+              ],
+              "hook": "partly"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "faithful"
+              ],
+              "hook": "partly"
+            }
+          }
+        },
+        {
+          "id": "J13",
+          "kind": "real",
+          "work_key": "OL5695642W",
+          "title": "Her Secret Bridegroom",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J14",
+          "kind": "real",
+          "work_key": "OL5844748W",
+          "title": "Cold Granite",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J15",
+          "kind": "real",
+          "work_key": "OL19739293W",
+          "title": "Our Kind of Cruelty",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J16",
+          "kind": "real",
+          "work_key": "OL20018619W",
+          "title": "Neurologic",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J17",
+          "kind": "real",
+          "work_key": "OL12073470W",
+          "title": "DMZ",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [
+                "rules_ok"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J18",
+          "kind": "real",
+          "work_key": "OL15280980W",
+          "title": "I Am Number Four",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J19",
+          "kind": "control_invented",
+          "work_key": "OL5695642W",
+          "title": "Her Secret Bridegroom",
+          "judges": {
+            "opus": {
+              "verdict": "FAIL",
+              "failed": [
+                "faithful"
+              ],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "FAIL",
+              "failed": [
+                "faithful"
+              ],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J20",
+          "kind": "real",
+          "work_key": "OL2005882W",
+          "title": "The two minute rule",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        },
+        {
+          "id": "J21",
+          "kind": "real",
+          "work_key": "OL823141W",
+          "title": "Whole earth discipline",
+          "judges": {
+            "opus": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            },
+            "sonnet": {
+              "verdict": "PASS",
+              "failed": [],
+              "hook": "yes"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "verdicts_note": "Per-book verdicts come from the judge files, which exist for rounds 4 to 6 only; rounds 1 to 3 were judged in the written evaluation only (summary-eval.md verdict tables) and are not included."
+}

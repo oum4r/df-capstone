@@ -1,0 +1,7 @@
+# The analytics dashboard only; the model, API and notebooks use ../requirements.txt.
+# streamlit and altair are pinned to the versions it was built and checked on
+# (theme keys baseFontSize and baseFontWeight, top navigation).
+streamlit==1.64.0
+altair==6.3.0
+pandas>=2.2
+pyarrow>=15

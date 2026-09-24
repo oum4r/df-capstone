@@ -1,0 +1,249 @@
+{
+  "source": {
+    "training": "training.parquet",
+    "oof": "sweep_day5_share_oof.parquet",
+    "features": "work_features.parquet",
+    "model_column": "hist_gb"
+  },
+  "n_works": 67350,
+  "expectations": [
+    {
+      "name": "(a) long books finish less often",
+      "rule": "mean share falls from the under-200 page band to the over-600 page band",
+      "comparison_values": {
+        "truth_under_200": 0.2803,
+        "truth_over_600": 0.1855,
+        "pred_under_200": 0.2721,
+        "pred_over_600": 0.1778
+      },
+      "held_truth": true,
+      "held_pred": true
+    },
+    {
+      "name": "(b) romance is above the overall mean",
+      "rule": "mean share for the romance group is above the all-works mean",
+      "comparison_values": {
+        "truth_group": 0.3411,
+        "truth_all": 0.2624,
+        "pred_group": 0.3335,
+        "pred_all": 0.2545
+      },
+      "held_truth": true,
+      "held_pred": true
+    },
+    {
+      "name": "(c) children's books are above the overall mean",
+      "rule": "mean share for the children's group is above the all-works mean",
+      "comparison_values": {
+        "truth_group": 0.2335,
+        "truth_all": 0.2624,
+        "pred_group": 0.2271,
+        "pred_all": 0.2545
+      },
+      "held_truth": false,
+      "held_pred": false
+    },
+    {
+      "name": "(d) academic books are below the overall mean",
+      "rule": "mean share for the academic group is below the all-works mean",
+      "comparison_values": {
+        "truth_group": 0.1455,
+        "truth_all": 0.2624,
+        "pred_group": 0.1387,
+        "pred_all": 0.2545
+      },
+      "held_truth": true,
+      "held_pred": true
+    }
+  ],
+  "top_subjects": [
+    {
+      "tag": "fiction",
+      "n_works": 33795,
+      "mean_truth": 0.2756,
+      "mean_pred": 0.2665,
+      "mae": 0.0657
+    },
+    {
+      "tag": "children's fiction",
+      "n_works": 12367,
+      "mean_truth": 0.2334,
+      "mean_pred": 0.2268,
+      "mae": 0.0545
+    },
+    {
+      "tag": "juvenile fiction",
+      "n_works": 10591,
+      "mean_truth": 0.2379,
+      "mean_pred": 0.2295,
+      "mae": 0.0561
+    },
+    {
+      "tag": "large type books",
+      "n_works": 7531,
+      "mean_truth": 0.2855,
+      "mean_pred": 0.2755,
+      "mae": 0.0681
+    },
+    {
+      "tag": "new york times bestseller",
+      "n_works": 5658,
+      "mean_truth": 0.2298,
+      "mean_pred": 0.2155,
+      "mae": 0.0636
+    },
+    {
+      "tag": "fiction, general",
+      "n_works": 5567,
+      "mean_truth": 0.2789,
+      "mean_pred": 0.2732,
+      "mae": 0.0662
+    },
+    {
+      "tag": "history",
+      "n_works": 5055,
+      "mean_truth": 0.2169,
+      "mean_pred": 0.2118,
+      "mae": 0.052
+    },
+    {
+      "tag": "fiction, romance, general",
+      "n_works": 4875,
+      "mean_truth": 0.3533,
+      "mean_pred": 0.3458,
+      "mae": 0.0727
+    },
+    {
+      "tag": "romance",
+      "n_works": 3519,
+      "mean_truth": 0.3099,
+      "mean_pred": 0.3108,
+      "mae": 0.0691
+    },
+    {
+      "tag": "fiction, romance, contemporary",
+      "n_works": 3023,
+      "mean_truth": 0.3648,
+      "mean_pred": 0.3549,
+      "mae": 0.0751
+    },
+    {
+      "tag": "man-woman relationships",
+      "n_works": 2692,
+      "mean_truth": 0.3219,
+      "mean_pred": 0.3208,
+      "mae": 0.0713
+    },
+    {
+      "tag": "fantasy",
+      "n_works": 2593,
+      "mean_truth": 0.2608,
+      "mean_pred": 0.2442,
+      "mae": 0.0749
+    },
+    {
+      "tag": "biography",
+      "n_works": 2528,
+      "mean_truth": 0.1899,
+      "mean_pred": 0.1853,
+      "mae": 0.0445
+    },
+    {
+      "tag": "new york times reviewed",
+      "n_works": 2402,
+      "mean_truth": 0.2148,
+      "mean_pred": 0.21,
+      "mae": 0.0563
+    },
+    {
+      "tag": "fantasy fiction",
+      "n_works": 2365,
+      "mean_truth": 0.2486,
+      "mean_pred": 0.2379,
+      "mae": 0.069
+    },
+    {
+      "tag": "all works",
+      "n_works": 67350,
+      "mean_truth": 0.2624,
+      "mean_pred": 0.2545,
+      "mae": 0.0603
+    }
+  ],
+  "groups": [
+    {
+      "tag": "romance",
+      "n_works": 15942,
+      "mean_truth": 0.3411,
+      "mean_pred": 0.3335,
+      "mae": 0.073
+    },
+    {
+      "tag": "children's",
+      "n_works": 16535,
+      "mean_truth": 0.2335,
+      "mean_pred": 0.2271,
+      "mae": 0.054
+    },
+    {
+      "tag": "academic",
+      "n_works": 2271,
+      "mean_truth": 0.1455,
+      "mean_pred": 0.1387,
+      "mae": 0.0385
+    },
+    {
+      "tag": "all works",
+      "n_works": 67350,
+      "mean_truth": 0.2624,
+      "mean_pred": 0.2545,
+      "mae": 0.0603
+    }
+  ],
+  "page_bands": [
+    {
+      "tag": "under 200",
+      "n_works": 22223,
+      "mean_truth": 0.2803,
+      "mean_pred": 0.2721,
+      "mae": 0.0608
+    },
+    {
+      "tag": "200 to 400",
+      "n_works": 27979,
+      "mean_truth": 0.2602,
+      "mean_pred": 0.2521,
+      "mae": 0.0612
+    },
+    {
+      "tag": "400 to 600",
+      "n_works": 9598,
+      "mean_truth": 0.2377,
+      "mean_pred": 0.2304,
+      "mae": 0.059
+    },
+    {
+      "tag": "over 600",
+      "n_works": 2761,
+      "mean_truth": 0.1855,
+      "mean_pred": 0.1778,
+      "mae": 0.0484
+    },
+    {
+      "tag": "unknown",
+      "n_works": 4789,
+      "mean_truth": 0.2864,
+      "mean_pred": 0.2793,
+      "mae": 0.0628
+    }
+  ],
+  "max_gap": {
+    "row": "fantasy",
+    "gap": 0.0167
+  },
+  "shelf_age": {
+    "n_works": 67350,
+    "spearman_ratio": -0.0614,
+    "spearman_share": -0.0614
+  }
+}

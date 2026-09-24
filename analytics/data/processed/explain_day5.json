@@ -1,0 +1,398 @@
+{
+  "method": {
+    "fold": "GroupKFold(n_splits=5, groups=_group_key(df) i.e. first_author_key falling back to work_key), first split only (train=53880 rows, validation=13470 rows) - the Day 4 folds",
+    "repeats": "permutation_importance: n_repeats=5, random_state=42, n_jobs=8",
+    "sample_size": "shap.TreeExplainer on a fixed-seed (random_state=42) sample of 5000 rows out of 67350 training rows (sample_rows)",
+    "scales": "permutation importance scores negative MAE on the share scale (model predictions are made on the logit scale and inverted with expit/invert_logit_target before comparing to the true share); SHAP mean |value| is on the model's own logit scale and is not inverted back to share"
+  },
+  "permutation": [
+    {
+      "name": "log1p_n_want",
+      "mean": 0.06551641465870003,
+      "std": 0.0008593932204482463
+    },
+    {
+      "name": "svd_0",
+      "mean": 0.004179199968484501,
+      "std": 3.873195114402559e-05
+    },
+    {
+      "name": "svd_1",
+      "mean": 0.003933640101624008,
+      "std": 8.822670301166253e-05
+    },
+    {
+      "name": "pages_median",
+      "mean": 0.0026884649077181357,
+      "std": 6.397107690936954e-05
+    },
+    {
+      "name": "svd_9",
+      "mean": 0.0018646131607349598,
+      "std": 0.00010456383380965679
+    },
+    {
+      "name": "publish_year_min",
+      "mean": 0.001837457847265697,
+      "std": 5.4772694244239276e-05
+    },
+    {
+      "name": "log1p_n_reading",
+      "mean": 0.0014950448986328856,
+      "std": 4.662255422057379e-05
+    },
+    {
+      "name": "shelf_age_days",
+      "mean": 0.001261444937229024,
+      "std": 8.420674718036074e-05
+    },
+    {
+      "name": "n_editions",
+      "mean": 0.0012291779816787723,
+      "std": 3.410545971306164e-05
+    },
+    {
+      "name": "n_subjects",
+      "mean": 0.0011912795259499133,
+      "std": 4.1705155976740585e-05
+    },
+    {
+      "name": "has_description",
+      "mean": 0.0011731890636504732,
+      "std": 9.276637294967064e-05
+    },
+    {
+      "name": "svd_3",
+      "mean": 0.0005590938586614247,
+      "std": 1.427019684813911e-05
+    },
+    {
+      "name": "n_covers",
+      "mean": 0.00043517134647046987,
+      "std": 4.6445666304735765e-05
+    },
+    {
+      "name": "share_english",
+      "mean": 0.0004342839232609849,
+      "std": 1.5962806499421937e-05
+    },
+    {
+      "name": "svd_2",
+      "mean": 0.0003147424999647888,
+      "std": 4.913063079635478e-05
+    },
+    {
+      "name": "svd_10",
+      "mean": 0.000290502324134026,
+      "std": 5.482361147484339e-05
+    },
+    {
+      "name": "svd_8",
+      "mean": 0.00028314685091234136,
+      "std": 3.8905009137013826e-05
+    },
+    {
+      "name": "svd_15",
+      "mean": 0.00020172358502266037,
+      "std": 4.2730498176490876e-05
+    },
+    {
+      "name": "svd_17",
+      "mean": 0.00019976525631200948,
+      "std": 1.550940953512067e-05
+    },
+    {
+      "name": "svd_19",
+      "mean": 0.00019059534954780634,
+      "std": 1.881480116012856e-05
+    },
+    {
+      "name": "svd_7",
+      "mean": 0.00015151628569768234,
+      "std": 3.490707844786091e-05
+    },
+    {
+      "name": "svd_4",
+      "mean": 0.00015105232719391515,
+      "std": 3.3385411688657956e-05
+    },
+    {
+      "name": "svd_18",
+      "mean": 0.00014463974961946845,
+      "std": 2.147363283939203e-05
+    },
+    {
+      "name": "svd_12",
+      "mean": 0.00013775638824574805,
+      "std": 2.452814962272232e-05
+    },
+    {
+      "name": "svd_5",
+      "mean": 0.0001116035678487115,
+      "std": 1.9253240306354727e-05
+    },
+    {
+      "name": "svd_14",
+      "mean": 0.00010691905891226094,
+      "std": 1.188281760340834e-05
+    },
+    {
+      "name": "n_authors",
+      "mean": 9.251465948078852e-05,
+      "std": 4.382712995969763e-05
+    },
+    {
+      "name": "svd_13",
+      "mean": 7.984585496957075e-05,
+      "std": 1.8280850682246936e-05
+    },
+    {
+      "name": "svd_6",
+      "mean": 7.103984221913662e-05,
+      "std": 1.2792881449525032e-05
+    },
+    {
+      "name": "svd_16",
+      "mean": 2.9311087190700414e-05,
+      "std": 7.419006759916817e-06
+    },
+    {
+      "name": "svd_11",
+      "mean": 2.4441602653241247e-05,
+      "std": 1.4409281379305478e-05
+    },
+    {
+      "name": "n_stopped",
+      "mean": 0.0,
+      "std": 0.0
+    },
+    {
+      "name": "first_publish_year_missing",
+      "mean": 0.0,
+      "std": 0.0
+    },
+    {
+      "name": "pages_median_missing",
+      "mean": 0.0,
+      "std": 0.0
+    },
+    {
+      "name": "first_publish_year",
+      "mean": -2.2272681330265386e-05,
+      "std": 1.8760079410017658e-05
+    }
+  ],
+  "shap_mean_abs": [
+    {
+      "name": "log1p_n_want",
+      "mean": 0.4951722483573323,
+      "std": 0.3543450581035454
+    },
+    {
+      "name": "svd_0",
+      "mean": 0.11345017265975944,
+      "std": 0.07620882788497338
+    },
+    {
+      "name": "svd_1",
+      "mean": 0.07132176858763782,
+      "std": 0.0672810713124213
+    },
+    {
+      "name": "pages_median",
+      "mean": 0.04981160751119276,
+      "std": 0.04979456304960463
+    },
+    {
+      "name": "svd_9",
+      "mean": 0.047582286720010344,
+      "std": 0.0444087397186326
+    },
+    {
+      "name": "has_description",
+      "mean": 0.044416213323669726,
+      "std": 0.031794802003317364
+    },
+    {
+      "name": "publish_year_min",
+      "mean": 0.04016715343461205,
+      "std": 0.035301693384255754
+    },
+    {
+      "name": "shelf_age_days",
+      "mean": 0.03345822305306099,
+      "std": 0.0290564005359855
+    },
+    {
+      "name": "n_editions",
+      "mean": 0.028989471357306337,
+      "std": 0.029683168769653188
+    },
+    {
+      "name": "log1p_n_reading",
+      "mean": 0.026455117251879153,
+      "std": 0.02416277741334477
+    },
+    {
+      "name": "n_covers",
+      "mean": 0.023972273173026925,
+      "std": 0.019753467176673044
+    },
+    {
+      "name": "n_subjects",
+      "mean": 0.021415040040343555,
+      "std": 0.03346146583730948
+    },
+    {
+      "name": "svd_3",
+      "mean": 0.017743668648468932,
+      "std": 0.02401942566346636
+    },
+    {
+      "name": "svd_8",
+      "mean": 0.01723679006068559,
+      "std": 0.011593331973915492
+    },
+    {
+      "name": "svd_10",
+      "mean": 0.015947232629914116,
+      "std": 0.017318068863617194
+    },
+    {
+      "name": "svd_7",
+      "mean": 0.013430123304468956,
+      "std": 0.015894078403887305
+    },
+    {
+      "name": "share_english",
+      "mean": 0.013425993623765356,
+      "std": 0.016914248354213592
+    },
+    {
+      "name": "svd_15",
+      "mean": 0.013244227647859387,
+      "std": 0.014053645846140186
+    },
+    {
+      "name": "svd_12",
+      "mean": 0.011450608333032639,
+      "std": 0.01198466260222283
+    },
+    {
+      "name": "svd_2",
+      "mean": 0.010752850384376364,
+      "std": 0.021159939347640693
+    },
+    {
+      "name": "svd_19",
+      "mean": 0.010480526343966632,
+      "std": 0.012278592537962285
+    },
+    {
+      "name": "svd_4",
+      "mean": 0.008615695768054288,
+      "std": 0.009110625420189051
+    },
+    {
+      "name": "svd_6",
+      "mean": 0.008473785806834607,
+      "std": 0.008733166220458841
+    },
+    {
+      "name": "n_authors",
+      "mean": 0.008395616393677042,
+      "std": 0.014875474817663213
+    },
+    {
+      "name": "svd_5",
+      "mean": 0.007876818119597296,
+      "std": 0.009082265034277382
+    },
+    {
+      "name": "svd_17",
+      "mean": 0.004876456678286727,
+      "std": 0.007003334150019888
+    },
+    {
+      "name": "svd_18",
+      "mean": 0.004790063783455509,
+      "std": 0.0069118353918254
+    },
+    {
+      "name": "first_publish_year",
+      "mean": 0.004534470284289567,
+      "std": 0.006685962851781489
+    },
+    {
+      "name": "svd_14",
+      "mean": 0.004166013924519297,
+      "std": 0.005644374592577853
+    },
+    {
+      "name": "svd_13",
+      "mean": 0.004160793177996066,
+      "std": 0.0053987272806961025
+    },
+    {
+      "name": "svd_16",
+      "mean": 0.0023247542952845946,
+      "std": 0.0034817176991548174
+    },
+    {
+      "name": "svd_11",
+      "mean": 0.0020573784758194285,
+      "std": 0.0026462980056882936
+    },
+    {
+      "name": "n_stopped",
+      "mean": 0.0,
+      "std": 0.0
+    },
+    {
+      "name": "first_publish_year_missing",
+      "mean": 0.0,
+      "std": 0.0
+    },
+    {
+      "name": "pages_median_missing",
+      "mean": 0.0,
+      "std": 0.0
+    }
+  ],
+  "svd_labels": {
+    "svd_0": "fiction / romance / general / historical",
+    "svd_1": "romance / -fiction / contemporary / -children",
+    "svd_2": "general / -contemporary / -stories / -and",
+    "svd_3": "historical / -contemporary / regency / customs",
+    "svd_4": "large / type / books / mystery",
+    "svd_5": "woman / man / relationships / large",
+    "svd_6": "mystery / detective / woman / man",
+    "svd_7": "english / in / -new / -york",
+    "svd_8": "english / american / literature / -fantasy",
+    "svd_9": "science / -children / -juvenile / -stories",
+    "svd_10": "fantasy / american / stories / -fiction",
+    "svd_11": "english / -science / in / fantasy",
+    "svd_12": "fantasy / and / customs / contemporary",
+    "svd_13": "graphic / -fantasy / novels / comics",
+    "svd_14": "contemporary / -romance / regency / horror",
+    "svd_15": "literature / american / juvenile / -stories",
+    "svd_16": "horror / suspense / -science / women",
+    "svd_17": "history / war / -regency / 1945",
+    "svd_18": "horror / -love / tales / literature",
+    "svd_19": "reading / level / grade / -fictitious"
+  },
+  "top5_permutation": [
+    "log1p_n_want",
+    "fiction / romance / general / historical",
+    "romance / -fiction / contemporary / -children",
+    "pages_median",
+    "science / -children / -juvenile / -stories"
+  ],
+  "top5_shap": [
+    "log1p_n_want",
+    "fiction / romance / general / historical",
+    "romance / -fiction / contemporary / -children",
+    "pages_median",
+    "science / -children / -juvenile / -stories"
+  ]
+}

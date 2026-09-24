@@ -1,0 +1,29 @@
+{
+  "method": "default HistGradientBoostingRegressor on log1p(ratio), GroupKFold(5) by first author; training fold subsampled by whole author groups at each fraction (seed 42), validation fold always complete; pooled out-of-fold MAE and R squared",
+  "fractions": {
+    "0.1": {
+      "mean_train_rows": 5422,
+      "mae": 0.1514,
+      "r2": 0.4708,
+      "seconds": 12.4
+    },
+    "0.25": {
+      "mean_train_rows": 13766,
+      "mae": 0.1474,
+      "r2": 0.4935,
+      "seconds": 25.6
+    },
+    "0.5": {
+      "mean_train_rows": 26984,
+      "mae": 0.145,
+      "r2": 0.5071,
+      "seconds": 46.4
+    },
+    "1.0": {
+      "mean_train_rows": 53880,
+      "mae": 0.144,
+      "r2": 0.5135,
+      "seconds": 90.6
+    }
+  }
+}

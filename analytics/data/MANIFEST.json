@@ -1,0 +1,95 @@
+{
+  "built_at": "2026-09-24T21:59:32+00:00",
+  "files": [
+    {
+      "file": "blend_weight_day7.json",
+      "how": "copied",
+      "bytes": 4619,
+      "sha256": "7f37d9dbfc80d9f75c949e0d41c3acc8e33bd745880eba24595e26ae9506a9d8"
+    },
+    {
+      "file": "explain_day5.json",
+      "how": "copied",
+      "bytes": 10280,
+      "sha256": "67c5776e7dec93c2b5b5f735f68a76f9a714232fbde3e3993d407d1a4b1ccb0b"
+    },
+    {
+      "file": "features.json",
+      "how": "copied",
+      "bytes": 2291,
+      "sha256": "e1c8c499ddf456ff4faa9d06f1db5a4e95ec599af67d3cde18e01dc9408f6f0a"
+    },
+    {
+      "file": "learning_curve.json",
+      "how": "copied",
+      "bytes": 756,
+      "sha256": "9141ab1c31b5504bf9b96ec50c21ede65c775b85218b1dbde92ef450a27a4193"
+    },
+    {
+      "file": "llm_eval.json",
+      "how": "copied",
+      "bytes": 53067,
+      "sha256": "53ba2b2f6b4e79418b26c8216bd081930da14f05ccb26d54435ea0ad346f4533"
+    },
+    {
+      "file": "metrics_day3.json",
+      "how": "copied",
+      "bytes": 1421,
+      "sha256": "674a8e2961806518fcd40d23a9ce5876eeb9c064798524a86e9a7363b11042a7"
+    },
+    {
+      "file": "metrics_day4.json",
+      "how": "copied",
+      "bytes": 4258,
+      "sha256": "0c1b6c2b977704d991d5a910156ee8343fae6e280543d07fe154b1f62709364f"
+    },
+    {
+      "file": "metrics_day5.json",
+      "how": "copied",
+      "bytes": 57545,
+      "sha256": "562c590075ab2ab0bfcb084828115cac03f34f28a70ea3a6a10ebf61a865e6a8"
+    },
+    {
+      "file": "profile_features_day7.json",
+      "how": "copied",
+      "bytes": 7465,
+      "sha256": "0a9ff5d5357899a0ba0a18602604833b90658dd3b1c2bf5ba622b753afb3fede"
+    },
+    {
+      "file": "r2_investigation.json",
+      "how": "copied",
+      "bytes": 3014,
+      "sha256": "0ce6892ec439856a3368034a2f78708fa170dfeb5fea4afcd799e963b44eeecf"
+    },
+    {
+      "file": "sanity_checks_day6.json",
+      "how": "copied",
+      "bytes": 5677,
+      "sha256": "5c61e332905636cffbb94769fe9173242609108ac73bbfb67fa882dade96911d"
+    },
+    {
+      "file": "shelf_by_month.parquet",
+      "how": "copied",
+      "bytes": 5006,
+      "sha256": "17583022b0b5a556c3387a997d97e5701a1cc03b026a43b11048a651ebe16a93"
+    },
+    {
+      "file": "training.parquet",
+      "how": "copied",
+      "bytes": 3187614,
+      "sha256": "1c7aa65931775264fc36debdaf3505701b3b1dc24a1c79c7f1218e2482cceaae"
+    },
+    {
+      "file": "sweep_day5_share_oof.parquet",
+      "how": "columns work_key, y, hist_gb",
+      "bytes": 1461686,
+      "sha256": "3bdbfd443131b85329dfbe30e3bf858d313df5c2accdf81aced1620dd121df72"
+    },
+    {
+      "file": "sweep_day5_ratio_oof.parquet",
+      "how": "columns work_key, y, hist_gb",
+      "bytes": 1460844,
+      "sha256": "79b524ede282d0044027b090a3fa9261875c72ea8102cdca8d1fc7c2eedf6fcc"
+    }
+  ]
+}

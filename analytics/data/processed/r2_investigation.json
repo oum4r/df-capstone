@@ -1,0 +1,83 @@
+{
+  "day4_reproduction": {
+    "method": "5-fold GroupKFold, groups = first_author_key (fallback work_key), pooled out-of-fold predictions; default HistGradientBoostingRegressor(random_state=42) fit on log1p(ratio), predictions inverted with expm1; all 75 feature columns.",
+    "mae": 0.144,
+    "rmse": 0.2335,
+    "r2_ratio_scale": 0.5135,
+    "r2_log1p_scale": 0.6056
+  },
+  "variance_breakdown": {
+    "method": "5-fold GroupKFold, groups = first_author_key (fallback work_key), pooled out-of-fold predictions; metrics on the Day 4 leader's out-of-fold ratio-scale predictions.",
+    "r2_by_n_want_bucket": {
+      "5-9": 0.1921,
+      "10-19": 0.2974,
+      "20-49": 0.48,
+      "50+": 0.5256
+    },
+    "rmse_by_n_want_bucket": {
+      "5-9": 0.3198,
+      "10-19": 0.2374,
+      "20-49": 0.1859,
+      "50+": 0.1224
+    },
+    "top_1pct_largest_ratio": {
+      "method": "rows selected by largest observed ratio, ceil(0.01*n) = 674 rows.",
+      "n_rows": 674,
+      "share_of_total_squared_error": 0.3404
+    },
+    "r2_excluding_ratio_gt_2": {
+      "method": "R-squared recomputed on the 67170 rows with ratio <= 2.0, same OOF predictions.",
+      "n_rows_dropped": 180,
+      "r2": 0.5537
+    }
+  },
+  "noise_ceiling": {
+    "method": "src.models.noise_ceiling: ratio_noise_variance/share_noise_variance from k=n_read, n=n_read+n_want (work_ratios.parquet), then r2_ceiling = 1 - mean(noise_var)/var(target).",
+    "ratio_ceiling_overall": 0.2962,
+    "share_ceiling_overall": 0.4778,
+    "ratio_ceiling_by_n_want_bucket": {
+      "5-9": -0.7365,
+      "10-19": 0.2702,
+      "20-49": 0.732,
+      "50+": 0.9138
+    },
+    "share_ceiling_by_n_want_bucket": {
+      "5-9": -1.5128,
+      "10-19": 0.0963,
+      "20-49": 0.7203,
+      "50+": 0.9104
+    }
+  },
+  "share_model": {
+    "method": "5-fold GroupKFold, groups = first_author_key (fallback work_key), pooled out-of-fold predictions; default HistGradientBoostingRegressor(random_state=42) fit on raw share.",
+    "mae": 0.0625,
+    "rmse": 0.0819,
+    "r2_overall": 0.6624,
+    "r2_by_n_want_bucket": {
+      "5-9": 0.2768,
+      "10-19": 0.3388,
+      "20-49": 0.5164,
+      "50+": 0.5748
+    },
+    "rmse_by_n_want_bucket": {
+      "5-9": 0.082,
+      "10-19": 0.0886,
+      "20-49": 0.0851,
+      "50+": 0.0657
+    }
+  },
+  "r2_to_ceiling_ratio": {
+    "method": "achieved R-squared (out-of-fold) divided by the Part A noise ceiling, same target.",
+    "ratio_target": 1.7338,
+    "share_target": 1.3865
+  },
+  "feature_strength_check": {
+    "method": "5-fold GroupKFold, groups = first_author_key (fallback work_key), pooled out-of-fold predictions; default HistGB fit on log1p(ratio), expm1 inverted; reduced model uses only log1p_n_want, log1p_n_reading, shelf_age_days.",
+    "n_features_reduced": 3,
+    "n_features_full": 75,
+    "r2_popularity_plus_shelf_age": 0.3663,
+    "r2_all_75_features": 0.5135
+  },
+  "n_rows": 67350,
+  "elapsed_seconds": 12.0
+}

@@ -1,0 +1,38 @@
+# Epilogue analytics: the Folio theme. Off-white ground, ink text and rules,
+# one red accent, EB Garamond alone. The font is a variable file (weights 400
+# to 800, latin subset, SIL OFL 1.1) served from analytics/static/.
+
+[server]
+enableStaticServing = true
+
+[theme]
+base = "light"
+primaryColor = "#A3202B"
+backgroundColor = "#F5F1E6"
+secondaryBackgroundColor = "#EAE3D2"
+textColor = "#1B1815"
+linkColor = "#2A4B7C"
+borderColor = "#1B1815"
+showWidgetBorder = true
+baseRadius = "2px"
+buttonRadius = "2px"
+font = "EB Garamond, serif"
+headingFont = "EB Garamond, serif"
+# An 18 px body at weight 500 keeps long tables readable.
+baseFontSize = 18
+baseFontWeight = 500
+headingFontWeights = [700, 700, 700, 700, 700, 700]
+headingFontSizes = ["2rem", "1.45rem", "1.2rem"]
+dataframeHeaderBackgroundColor = "#EAE3D2"
+dataframeBorderColor = "#1B1815"
+# The five Folio ramp fills, top to bottom; no second accent.
+chartCategoricalColors = ["#7A2230", "#6B3D1E", "#585020", "#333A4C", "#100F0D"]
+
+[[theme.fontFaces]]
+family = "EB Garamond"
+url = "app/static/eb-garamond-latin.woff2"
+weight = "400 800"
+style = "normal"
+
+[client]
+toolbarMode = "minimal"
